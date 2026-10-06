@@ -4,6 +4,10 @@
 
 > An original Oriental turtle-dove companion for Codex Desktop.
 
+<p align="center">
+  <img src="pets/gugu/spritesheet.webp" alt="Gugu sprite atlas" width="520">
+</p>
+
 ## ✨ 特点
 
 - Codex Custom Pet V2
@@ -11,8 +15,8 @@
 - 单格尺寸：192 × 208 px
 - 整张精灵图：1536 × 2288 px
 - 包含待机、左右移动/飞行、挥翅、跳跃、失败、等待、工作、review 等状态
-- 包含 16 个观察方向
-- 提供 Windows / macOS / Linux 安装脚本
+- 最后两行包含 16 个观察方向
+- Windows / macOS / Linux 安装脚本
 
 ## 📦 安装
 
@@ -37,7 +41,7 @@ pets/gugu/spritesheet.webp
 %USERPROFILE%\.codex\pets\gugu\
 ```
 
-如果你设置了 `CODEX_HOME`，则使用：
+如果设置了 `CODEX_HOME`，则使用：
 
 ```text
 %CODEX_HOME%\pets\gugu\
@@ -56,7 +60,7 @@ chmod +x ./install.sh
 ~/.codex/pets/gugu/
 ```
 
-安装后重新打开 Codex，在宠物设置中刷新并选择 **咕咕 Gugu**。
+安装后重新打开 Codex，在 Pets 设置中刷新并选择 **咕咕 Gugu**。
 
 ## 🗂️ 仓库结构
 
@@ -66,8 +70,6 @@ Gugu-Codex-Pet/
 │  └─ gugu/
 │     ├─ pet.json
 │     └─ spritesheet.webp
-├─ source/
-│  └─ pet_request.json
 ├─ install.ps1
 ├─ install.sh
 ├─ LICENSE
@@ -75,8 +77,6 @@ Gugu-Codex-Pet/
 ```
 
 ## 🎨 动作规格
-
-咕咕使用 V2、8 × 11 精灵图：
 
 | 行 | 状态 | 帧数 |
 |---|---|---:|
@@ -91,7 +91,9 @@ Gugu-Codex-Pet/
 | 8 | review | 6 |
 | 9–10 | 16-direction look | 16 |
 
-更完整的生成与动作规格保存在 `source/pet_request.json`。
+## 🛠️ 二次创作
+
+你可以 fork 本仓库并替换 `pets/gugu/spritesheet.webp` 来制作自己的版本。保持 V2 图集尺寸为 **1536 × 2288**、8 列 × 11 行，每格 **192 × 208**。
 
 ## 🤖 关于项目
 

@@ -1,0 +1,29 @@
+name: Finalize Gugu asset
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "bootstrap/READY"
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild spritesheet
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat bootstrap/spritesheet.webp.b64.part-* | tr -d '\r\n ' | base64 --decode > pets/gugu/spritesheet.webp
+          echo "53e32e024b315c4ad2d245091a8af9a65cab3a1b82309587f208c508f11c9db8  pets/gugu/spritesheet.webp" | sha256sum -c -
+          rm -rf bootstrap
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pets/gugu/spritesheet.webp
+          git add -u bootstrap
+          git commit -m "feat: add Gugu spritesheet"
+          git push
